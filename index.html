@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cali 2026 — IWF World Youth Championships</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body data-page="home">
+
+<!-- Top App Bar -->
+<header class="app-topbar">
+  <div class="app-topbar__brand">
+    <div class="app-topbar__logo">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVqh24cmQXlIduXFVTKAzB5gT9TW6wz7I-R8OKncsIZSwnlO6owRb0hYEy6MI_udXg-Dko58Q-tzOlGIkLpHHQCDII39neR7sXmoSCwxVzGBIIU7N8gXbjDWzbKGcnRbjpaUQjAPRb_ZYyVTk-pH33btcNHXGRt9tCm7hJFKX-E3j2NIW1OzS3BlR6l-oLNgqXlvPBTRSJM2CjgTqeF_FlAR8nUk7tAsvso-1p8Pig9Z8Yw5pf-gRlF7hQcYKGjCFJYSaR7pNBwV0" alt="Event Mascot">
+    </div>
+    <h1 class="app-topbar__title">Cali 2026</h1>
+  </div>
+  <button class="app-topbar__menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#appMenu" aria-controls="appMenu">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+</header>
+
+<!-- Slide-out menu -->
+<div class="offcanvas offcanvas-end offcanvas-cali" tabindex="-1" id="appMenu">
+  <div class="offcanvas-header">
+    <h5 class="app-topbar__title mb-0">Cali 2026</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body p-0">
+    <div class="list-group list-group-flush">
+      <a href="index.html" class="list-group-item is-active" data-page="home"><span class="material-symbols-outlined">home</span> Home</a>
+      <a href="hotels.html" class="list-group-item" data-page="hotels"><span class="material-symbols-outlined">hotel</span> Hotels</a>
+      <a href="venue.html" class="list-group-item" data-page="venue"><span class="material-symbols-outlined">stadium</span> Venue</a>
+      <a href="security.html" class="list-group-item" data-page="security"><span class="material-symbols-outlined">security</span> Security</a>
+      <a href="tourism.html" class="list-group-item" data-page="tourism"><span class="material-symbols-outlined">explore</span> Tourism</a>
+    </div>
+  </div>
+</div>
+
+<main class="app-main">
+
+  <!-- Hero Section -->
+  <section class="mb-4">
+    <div class="hero-banner" style="aspect-ratio: 4/3; background-color: var(--color-primary);">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC6SHyuUcrYO-XWII-_gctrcssXvSAY-hPHBmhQb0YYNC9Hu_Llc9-VSQaDWUpd012kf1NMRcgYBIuFy0T1ro3B5gELZS46vhTvfKiQQeL56xTY8FO-e5OBYcCue4HpzxD8XNlImYJUECCMvWv4dnzFKOwvyLUUZ_mALbS5ZpLbT-dGjmDYo3mRgmds8IYPbprdZh55JEgr9xcuIGOS7MOmhtx_P3j7W2a9cTLl2GeeKA1ofto_cbKHyiabeBvrVzRYxGKWG_vmBg" alt="IWF World Youth Championships Cali 2026">
+      <div class="hero-banner__overlay"></div>
+      <div class="hero-banner__content">
+        <p class="text-white mb-0" style="font-size: 1.375rem; font-weight: 600;">Welcome to the World Youth Championships</p>
+        <p class="mb-0 mt-1 text-uppercase" style="color: var(--color-secondary-container); font-size: 14px; font-weight: 600; letter-spacing: 0.05em;">Cali, Colombia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid Main Sections -->
+  <div class="row g-3">
+    <div class="col-12">
+      <a href="hotels.html" class="bento-tile bento-tile--yellow text-decoration-none">
+        <div class="d-flex align-items-center gap-3">
+          <div class="bento-tile__icon" style="background-color: rgba(255,255,255,0.3);"><span class="material-symbols-outlined icon-fill fs-3">hotel</span></div>
+          <div>
+            <h2 class="mb-1 fw-semibold fs-5 text-dark">Hotels</h2>
+            <p class="mb-0 text-dark" style="font-size:12px; opacity:0.7;">Official Hotels</p>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-dark" style="opacity:0.5;">chevron_right</span>
+      </a>
+    </div>
+    <div class="col-12">
+      <a href="venue.html" class="bento-tile bento-tile--blue text-decoration-none">
+        <div class="d-flex align-items-center gap-3">
+          <div class="bento-tile__icon" style="background-color: rgba(255,255,255,0.2);"><span class="material-symbols-outlined icon-fill fs-3 text-white">emergency_share</span></div>
+          <div>
+            <h2 class="mb-1 fw-semibold fs-5 text-white">Venue</h2>
+            <p class="mb-0 text-white" style="font-size:12px; opacity:0.7;">And Emergencies</p>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-white" style="opacity:0.5;">chevron_right</span>
+      </a>
+    </div>
+    <div class="col-12">
+      <a href="security.html" class="bento-tile bento-tile--red text-decoration-none">
+        <div class="d-flex align-items-center gap-3">
+          <div class="bento-tile__icon" style="background-color: rgba(255,255,255,0.2);"><span class="material-symbols-outlined icon-fill fs-3 text-white">security</span></div>
+          <div>
+            <h2 class="mb-1 fw-semibold fs-5 text-white">Security</h2>
+            <p class="mb-0 text-white" style="font-size:12px; opacity:0.7;">Protocols &amp; Support</p>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-white" style="opacity:0.5;">verified_user</span>
+      </a>
+    </div>
+    <div class="col-12">
+      <a href="tourism.html" class="bento-tile bento-tile--flag text-decoration-none">
+        <div class="d-flex align-items-center gap-3">
+          <div class="bento-tile__icon" style="background-color: rgba(255,255,255,0.3);"><span class="material-symbols-outlined icon-fill fs-3 text-white">location_on</span></div>
+          <div>
+            <h2 class="mb-1 fw-semibold fs-5 text-white">Tourism</h2>
+            <p class="mb-0 text-white" style="font-size:12px; opacity:0.9;">In Cali</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <span class="text-white text-uppercase" style="font-size:11px; letter-spacing:0.05em; opacity:0.9;">Directions</span>
+          <span class="material-symbols-outlined text-white" style="opacity:0.9;">directions</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Secondary Info Section -->
+  <section class="mt-4 mb-4">
+    <div class="card-soft p-3">
+      <span class="fw-bold text-uppercase" style="color: var(--color-tertiary); font-size: 12px;">Competition</span>
+      <h4 class="fw-bold mt-1" style="font-size: 16px;">Official Cali 2026 Schedule</h4>
+      <p class="mt-1" style="color: var(--color-on-surface-variant); font-size: 14px;">Download dates and times for all weight categories…</p>
+      <a class="d-inline-flex align-items-center gap-1 mt-2" style="color: var(--color-primary-container); font-weight: 600; font-size: 14px;" href="https://www.iwf.sport/" target="_blank" rel="noopener">
+        Visit Official IWF Website
+        <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Bottom Navigation Bar -->
+<nav class="app-bottomnav">
+  <a href="index.html" class="app-bottomnav__item" data-page="home">
+    <span class="material-symbols-outlined icon-fill">home</span>
+    <span class="app-bottomnav__label">Home</span>
+  </a>
+  <a href="hotels.html" class="app-bottomnav__item" data-page="hotels">
+    <span class="material-symbols-outlined">hotel</span>
+    <span class="app-bottomnav__label">Hotels</span>
+  </a>
+  <a href="venue.html" class="app-bottomnav__item" data-page="venue">
+    <span class="material-symbols-outlined">stadium</span>
+    <span class="app-bottomnav__label">Venue</span>
+  </a>
+  <a href="security.html" class="app-bottomnav__item" data-page="security">
+    <span class="material-symbols-outlined">security</span>
+    <span class="app-bottomnav__label">Security</span>
+  </a>
+  <a href="tourism.html" class="app-bottomnav__item" data-page="tourism">
+    <span class="material-symbols-outlined">explore</span>
+    <span class="app-bottomnav__label">Tourism</span>
+  </a>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
