@@ -1,0 +1,561 @@
+/* ==========================================================================
+   Cali 2026 - IWF World Youth Weightlifting Championships
+   Hoja de estilos global (replica fiel de los mockups Stitch)
+   ========================================================================== */
+
+:root{
+  /* Colores base extraídos del DESIGN.md / tailwind config de los mockups */
+  --color-background:      #f9f9ff;
+  --color-sepia:           #F5F5DC; /* fondo cálido usado en <body> de todas las pantallas */
+  --color-surface-lowest:  #ffffff;
+  --color-surface-low:     #f2f3fc;
+  --color-surface:         #ededf6;
+  --color-surface-high:    #e7e8f0;
+  --color-surface-highest: #e1e2ea;
+  --color-surface-dim:     #d9d9e2;
+
+  --color-on-background:   #191c21;
+  --color-on-surface:      #191c21;
+  --color-on-surface-variant: #424752;
+
+  --color-outline:         #727784;
+  --color-outline-variant: #c2c6d4;
+
+  --color-primary:            #003f87;
+  --color-primary-blue:       #0056b3; /* azul de header / bottom-nav activo */
+  --color-primary-container:  #0056b3;
+  --color-on-primary:         #ffffff;
+  --color-on-primary-container:#bbd0ff;
+
+  --color-secondary:            #705d00;
+  --color-on-secondary:         #ffffff;
+  --color-secondary-container:  #fcd400;
+  --color-on-secondary-container:#6e5c00;
+  --color-secondary-fixed:      #ffe16d;
+  --color-yellow-accent:        #FFD700; /* amarillo brillante (hoteles, nav activo) */
+
+  --color-tertiary:             #88000e;
+  --color-on-tertiary:          #ffffff;
+  --color-tertiary-container:   #b1121b;
+  --color-on-tertiary-container:#ffc0ba;
+
+  --color-error:            #ba1a1a;
+  --color-error-container:  #ffdad6;
+  --color-on-error-container:#93000a;
+
+  /* Radios */
+  --radius-sm: 0.25rem;
+  --radius-default: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-2\.5xl: 2.5rem;
+  --radius-full: 9999px;
+
+  /* Espaciados */
+  --space-base: 8px;
+  --space-container-margin: 20px;
+  --space-gutter: 12px;
+  --space-stack-sm: 4px;
+  --space-stack-md: 16px;
+  --space-stack-lg: 32px;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin:0;
+  padding:0;
+}
+
+body{
+  background-color: var(--color-sepia);
+  color: var(--color-on-background);
+  font-family: 'Lexend', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  padding-bottom: 7.5rem; /* espacio para bottom nav */
+  max-width: 480px;       /* layout exclusivo para celular */
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.material-symbols-outlined{
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+.icon-fill{
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ---------- Tipografía (escala Lexend del DESIGN.md) ---------- */
+.text-display-lg{ font-size:40px; line-height:48px; font-weight:700; letter-spacing:-0.02em; }
+.text-headline-lg{ font-size:28px; line-height:36px; font-weight:600; }
+.text-headline-md{ font-size:22px; line-height:28px; font-weight:600; }
+.text-body-lg{ font-size:18px; line-height:26px; font-weight:400; }
+.text-body-md{ font-size:16px; line-height:24px; font-weight:400; }
+.text-label-lg{ font-size:14px; line-height:20px; font-weight:600; letter-spacing:0.05em; }
+.text-label-sm{ font-size:12px; line-height:16px; font-weight:500; }
+
+/* ---------- Utilidades de color ---------- */
+.text-primary-cali{ color: var(--color-primary); }
+.text-secondary-cali{ color: var(--color-secondary); }
+.text-tertiary-cali{ color: var(--color-tertiary); }
+.text-on-surface-variant{ color: var(--color-on-surface-variant); }
+.bg-primary-cali{ background-color: var(--color-primary); }
+.bg-primary-container-cali{ background-color: var(--color-primary-container); }
+.bg-secondary-container-cali{ background-color: var(--color-secondary-container); }
+.bg-tertiary-container-cali{ background-color: var(--color-tertiary-container); }
+
+/* ==========================================================================
+   TopAppBar
+   ========================================================================== */
+.app-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  z-index: 1050;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: var(--color-sepia);
+  border-bottom: 2px solid rgba(0,86,179,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.app-header .brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  transition: transform .2s ease;
+}
+.app-header .brand:active{ transform: scale(0.95); }
+.app-header .brand img{
+  width:40px; height:40px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(0,86,179,0.2);
+}
+.app-header .brand h1{
+  margin:0;
+  font-family:'Lexend',sans-serif;
+  font-weight:700;
+  font-style: italic;
+  text-transform:uppercase;
+  letter-spacing:-0.03em;
+  font-size:1.1rem;
+  color: var(--color-primary-blue);
+}
+.app-header .menu-btn{
+  background:none;
+  border:none;
+  color: var(--color-primary-blue);
+  font-size:1.5rem;
+  display:flex;
+  align-items:center;
+  transition: transform .2s ease;
+  cursor: pointer;
+}
+.app-header .menu-btn:active{ transform: scale(0.95); }
+
+/* Off-canvas menú (solo informativo) */
+.offcanvas-cali .offcanvas-header{
+  background-color: var(--color-primary);
+  color:#fff;
+}
+.offcanvas-cali .offcanvas-body a{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 6px;
+  color: var(--color-on-background);
+  text-decoration:none;
+  border-bottom:1px solid var(--color-outline-variant);
+  font-weight:500;
+}
+.offcanvas-cali .offcanvas-body a .material-symbols-outlined{
+  color: var(--color-primary-blue);
+}
+.offcanvas-cali .offcanvas-body a.active{
+  color: var(--color-primary-blue);
+  font-weight:700;
+}
+
+main{
+  padding-top: 88px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero{
+  position:relative;
+  border-radius: var(--radius-2xl);
+  overflow:hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  margin-bottom: var(--space-stack-lg);
+}
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+}
+.hero-content{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  padding: 1.5rem;
+  z-index:2;
+}
+.hero .chip{
+  display:inline-block;
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+/* ==========================================================================
+   Bento grid (Home)
+   ========================================================================== */
+.bento-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-gutter);
+}
+.bento-card{
+  grid-column: span 2 / span 2;
+  height: 8rem;
+  border-radius: var(--radius-2\.5xl);
+  border-radius: 2.5rem;
+  padding: 1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  text-decoration:none;
+  transition: transform .15s ease;
+  border:none;
+  width:100%;
+  cursor:pointer;
+}
+.bento-card:active{ transform: scale(0.96); }
+.bento-card .bento-icon-wrap{
+  width:56px; height:56px;
+  border-radius: var(--radius-lg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.bento-card .bento-icon-wrap .material-symbols-outlined{ font-size:28px; }
+.bento-card h2{
+  margin:0 0 2px 0;
+  font-size:22px;
+  line-height:1;
+  font-weight:600;
+}
+.bento-card p{
+  margin:0;
+  font-size:12px;
+  opacity:0.8;
+}
+.bento-card .chevron{
+  font-size:1.4rem;
+  opacity:0.5;
+}
+
+.bento-hotels{ background-color: var(--color-yellow-accent); }
+.bento-hotels h2, .bento-hotels p, .bento-hotels .chevron{ color:#000; }
+.bento-hotels .bento-icon-wrap{ background: rgba(255,255,255,0.3); color:#000; }
+
+.bento-venue{ background-color: var(--color-primary-container); }
+.bento-venue h2, .bento-venue p, .bento-venue .chevron{ color:#fff; }
+.bento-venue .bento-icon-wrap{ background: rgba(255,255,255,0.2); color:#fff; }
+
+.bento-security{ background-color: var(--color-tertiary-container); }
+.bento-security h2, .bento-security p, .bento-security .chevron{ color:#fff; }
+.bento-security .bento-icon-wrap{ background: rgba(255,255,255,0.2); color:#fff; }
+
+.bento-tourism{ background: linear-gradient(to bottom, #FCD116 0%, #003893 55%, #CE1126 100%); }
+.bento-tourism h2, .bento-tourism p, .bento-tourism span{ color:#fff; text-shadow: 0 1px 3px rgba(0,0,0,0.35); }
+.bento-tourism .bento-icon-wrap{ background: rgba(255,255,255,0.3); color:#fff; }
+.bento-tourism .directions-label{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:11px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+/* ==========================================================================
+   Tarjetas informativas genéricas
+   ========================================================================== */
+.card-cali{
+  background-color:#fff;
+  border-radius: var(--radius-xl);
+  padding: 1.25rem;
+  box-shadow: 0 8px 30px rgba(0,86,179,0.08);
+  border: 1px solid rgba(0,86,179,0.05);
+  margin-bottom: var(--space-gutter);
+}
+.card-cali.border-accent{ border-left: 8px solid var(--color-primary); }
+.card-cali.border-accent-secondary{ border-left: 8px solid var(--color-secondary-container); }
+
+.info-link-card{
+  display:block;
+  background:#fff;
+  border-radius: var(--radius-xl);
+  padding:1.25rem;
+  box-shadow: 0 8px 30px rgba(0,86,179,0.08);
+  text-decoration:none;
+  color:inherit;
+}
+.info-link-card .eyebrow{
+  color: var(--color-tertiary);
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+.info-link-card h4{
+  margin: 4px 0 4px 0;
+  font-weight:700;
+  color: var(--color-on-background);
+}
+.info-link-card p{
+  margin:0;
+  color: var(--color-on-surface-variant);
+  font-size:0.9rem;
+}
+.info-link-card a.external-link{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  color: var(--color-primary);
+  font-size:0.9rem;
+  font-weight:600;
+  margin-top:10px;
+  text-decoration:none;
+}
+.info-link-card a.external-link:hover{ text-decoration:underline; }
+
+/* Botón primario estilo mockups */
+.btn-cali-primary{
+  background-color: var(--color-primary);
+  color:#fff;
+  border:none;
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.5rem;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:0.03em;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  box-shadow: 0 6px 14px rgba(0,63,135,0.25);
+  transition: transform .15s ease;
+  text-decoration:none;
+}
+.btn-cali-primary:active{ transform: scale(0.96); }
+.btn-cali-secondary{
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  border:none;
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.5rem;
+  font-weight:600;
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  box-shadow: 0 6px 14px rgba(252,212,0,0.25);
+  transition: transform .15s ease;
+  text-decoration:none;
+}
+.btn-cali-secondary:active{ transform: scale(0.96); }
+
+/* ==========================================================================
+   Bottom Navigation Bar
+   ========================================================================== */
+.bottom-nav{
+  position:fixed;
+  bottom:0; left:0; right:0;
+  max-width:480px;
+  margin:0 auto;
+  z-index:1050;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding: 12px 16px 24px 16px;
+  background-color: rgba(245,245,220,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 20px rgba(0,86,179,0.1);
+}
+.bottom-nav .nav-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+  color: #78716c;
+  text-decoration:none;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  transition: transform .15s ease, background-color .15s ease, color .15s ease;
+}
+.bottom-nav .nav-item:active{ transform: scale(0.9); }
+.bottom-nav .nav-item span.label{
+  font-family:'Lexend', sans-serif;
+  font-size:10px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+}
+.bottom-nav .nav-item.active{
+  color: var(--color-yellow-accent);
+  background-color: var(--color-primary-blue);
+}
+
+/* ==========================================================================
+   Utilidades varias
+   ========================================================================== */
+.section-title-bar{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom: 1rem;
+}
+.section-title-bar .bar{
+  width:8px;
+  height:32px;
+  border-radius: var(--radius-full);
+}
+.section-title-bar h3{
+  margin:0;
+  font-size:22px;
+  font-weight:600;
+  color: var(--color-on-background);
+}
+
+.list-item-card{
+  background:#fff;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,20,60,0.05);
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-bottom: 0.75rem;
+}
+.list-item-card .icon-wrap{
+  width:40px; height:40px;
+  border-radius: var(--radius-md);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.list-item-card p{ margin:0; color: var(--color-on-surface); }
+
+.poi-card{
+  background:#fff;
+  border-radius: var(--radius-lg);
+  padding:1rem;
+  box-shadow: 0 4px 20px rgba(0,86,179,0.1);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  min-height:160px;
+  transition: transform .15s ease;
+}
+.poi-card:hover{ transform: scale(1.02); }
+.poi-card .icon-wrap{
+  width:40px; height:40px;
+  border-radius: var(--radius-md);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.poi-card h4{ margin:0; font-weight:700; font-size:0.95rem; color: var(--color-on-background); }
+.poi-card p{ margin:2px 0 0 0; font-size:11px; color: var(--color-on-surface-variant); line-height:1.3; }
+.poi-card .poi-location{
+  margin-top:6px;
+  font-size:10px;
+  font-weight:600;
+  color: var(--color-primary);
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+.poi-card.wide{ grid-column: span 2 / span 2; flex-direction:row; align-items:center; min-height:auto; }
+.poi-card.wide .icon-wrap{ width:64px; height:64px; flex-shrink:0; }
+.poi-card.wide .material-symbols-outlined{ font-size:1.8rem; }
+
+.table-cali{
+  width:100%;
+  border-collapse:collapse;
+  font-size:9px;
+  text-align:center;
+}
+.table-cali th, .table-cali td{
+  border:1px solid var(--color-outline-variant);
+  padding:4px 2px;
+}
+.table-cali thead{
+  background-color: var(--color-surface-high);
+  color: var(--color-on-surface-variant);
+  text-transform:uppercase;
+}
+.table-cali td.day-cell{
+  font-weight:700;
+  background-color: var(--color-surface-low);
+}
+
+.note-card{
+  border-radius: var(--radius-xl);
+  padding:1.25rem;
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+}
+.note-card.yellow{
+  background-color: rgba(252,212,0,0.12);
+  border:2px solid rgba(252,212,0,0.5);
+}
+.note-card.secondary{
+  background-color: rgba(252,212,0,0.1);
+  border:1px solid rgba(252,212,0,0.3);
+}
+
+a{ -webkit-tap-highlight-color: transparent; }
+
+@media (min-width: 481px){
+  body{ box-shadow: 0 0 40px rgba(0,0,0,0.08); }
+}
